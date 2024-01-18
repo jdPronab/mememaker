@@ -1,0 +1,24 @@
+<CTextInput@TextInput>:
+    multiline: True
+    background_color: [0.0, 0.0, 0.0, 1]
+    foreground_color: [1.0, 1.0, 1.0, 1]
+    cursor_color: self.foreground_color
+    halign: 'center'
+
+<MemeLayout>:
+    img1: _img1
+    img2: _img2
+    orientation: 'vertical'
+    size_hint: 1, .99
+    CTextInput:
+        text: "First Heading"
+        size_hint_x: 1
+        size_hint_y: .2
+    ImageHolder:
+        id: _img1
+    CTextInput:
+        text: "Second Heading"
+        size_hint_x: 1
+        size_hint_y: .2
+    ImageHolder:
+        id: _img2

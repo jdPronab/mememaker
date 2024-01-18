@@ -1,0 +1,16 @@
+<ImageHolder>:
+    btn: _btn
+    Image:
+        source: root.img_source
+        size_hint: 1, 1
+        size: root.size
+        pos_hint: {'center_x': 0.5, 'center_y': .5}
+    Button:
+        id: _btn
+        text: '+'
+        size_hint: None, None
+        size: (20, 20)
+        pos_hint: {'right': 1, 'top': 1}
+        on_press: root.open_img()
+
+

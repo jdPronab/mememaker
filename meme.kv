@@ -1,0 +1,48 @@
+<RootWidget>:
+    container: _container
+    orientation: 'vertical'
+    BoxLayout:
+        id: _container
+    BoxLayout:
+        size_hint: 1, .11
+        Button:
+            text: 'New'
+            on_press: root.new()
+        Button:
+            text: 'Save'
+            on_press: root.save()
+
+<LoadBialogButton@Button>:
+    size: 50, 30
+
+<LoadDialog>:
+    BoxLayout:
+        size: root.size
+        pos: root.pos
+        orientation: "vertical"
+        FileChooserListView:
+            id: filechooser
+            rootpath: '/home/'
+            filters: ['*.png', '*.jpg', '*.jpeg']
+
+        StackLayout:
+            orientation: 'rl-tb'
+            size_hint_y: None
+            height: 30
+            padding: 10
+            spacing: 20
+
+            LoadBialogButton:
+                text: "Load"
+                on_release: root.load(filechooser.path, filechooser.selection)
+            
+            LoadBialogButton:
+                text: "Cancel"
+                on_release: root.cancel()
+
+
+
+
+
+        
+    
